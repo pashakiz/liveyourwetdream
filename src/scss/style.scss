@@ -1,3 +1,6 @@
+$body-test-color: red;
+@import "~bootstrap/scss/bootstrap";
+
 *::-webkit-input-placeholder {
     color: #7A7A7A;
     opacity: 1;
@@ -29,6 +32,7 @@ body {
     font-size: 12px;
     color: #7A7A7A;
     background-color: #fff;
+    background-color: $body-test-color;
 }
 .preloader {
     position: fixed;
