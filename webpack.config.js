@@ -35,7 +35,12 @@ const cssLoaders = extra => {
         reloadAll: true
       },
     },
-    'css-loader'
+    {
+      loader: 'css-loader',
+      options: {
+        url: false
+      }
+    }
   ];
   if (extra) {
     loaders.push(extra)
@@ -109,7 +114,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {name: 'img/[name].[ext]'}
+            options: {
+              name: '[name].[ext]',
+              outputPath: path.resolve(__dirname, 'dist/img')
+            }
           }
         ]
       },
@@ -121,7 +129,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: '../fonts/'
+              outputPath: path.resolve(__dirname, 'dist/fonts')
             }
           }
         ]
