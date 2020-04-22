@@ -2,91 +2,138 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
+  if (isProd) {
+    config.minimizer = [
+      new OptimizeCssAssetWebpackPlugin(),
+      new TerserWebpackPlugin()
+    ]
+  }
+  return config
+}
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+
+const cssLoaders = extra => {
+  const loaders = [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        hmr: isDev,
+        reloadAll: true
+      },
+    },
+    'css-loader'
+  ];
+  if (extra) {
+    loaders.push(extra)
+  }
+  return loaders
+}
+
+const babelOptions = preset => {
+  const opts = {
+    presets: [
+      '@babel/preset-env'
+    ],
+    plugins: [
+      '@babel/plugin-proposal-class-properties'
+    ]
+  }
+
+  if (preset) {
+    opts.presets.push(preset)
+  }
+
+  return opts
+}
 
 module.exports = {
   mode: 'development', // "production" | "development" | "none"
   entry: [
-    './src/js/index.js',
-    './src/scss/style.scss'
+    '@babel/polyfill',
+    './src/js/index.js'
   ],
   output: {
-    filename: './js/bundle.[contenthash].js',
+    filename: 'js/' + filename('js'),
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: "source-map",
+  devServer: {
+    port: 4250,
+    hot: isDev
+  },
+  devtool: isDev ? 'source-map' : '',
+  resolve: {
+    //extensions: ['.js', '.json', '.png'],
+    alias: {
+      '@views': path.resolve(__dirname, 'src/html/views'),
+      '@includes': path.resolve(__dirname, 'src/html/includes'),
+      '@scss': path.resolve(__dirname, 'src/scss'),
+      '@': path.resolve(__dirname, 'src'),
+    }
+  },
+  optimization: optimization(),
   module: {
     rules: [
-        {
-          test: /\.js$/,
-          include: path.resolve(__dirname, 'src/js'),
-          use: {
-            loader: 'babel-loader',
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: 'babel-loader',
+          options: babelOptions()
+        }
+      },
+      {
+        test: /\.css$/,
+        use: cssLoaders()
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: cssLoaders('sass-loader')
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        exclude: path.resolve(__dirname, 'src/fonts'),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {name: 'img/[name].[ext]'}
+          }
+        ]
+      },
+      {
+        test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
+        exclude: path.resolve(__dirname, 'src/img'),
+        use: [
+          {
+            loader: 'file-loader',
             options: {
-              presets: 'env'
+              name: '[name].[ext]',
+              outputPath: '../fonts/'
             }
           }
-        },
-        {
-          test: /\.(sass|scss)$/,
-          include: path.resolve(__dirname, 'src/scss'),
-          use: MiniCssExtractPlugin.extract({
-            use: [{
-                loader: "css-loader",
-                options: {
-                  sourceMap: true//,
-                  //url: false
-                }
-              },
-              {
-                loader: "resolve-url-loader"
-              },
-              {
-                loader: "sass-loader",
-                options: {
-                  sourceMap: true
-                }
-              }
-            ]
-          })
-        },
-        {
-          test: /\.(png|jpg|svg|gif)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {name: 'img/[name].[ext]'}
-            }
-          ]
-        },
-        {
-          test: /\.(ttf|otf|svg|woff|woff2|eot)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {name: 'fonts/[name].[ext]'}
-            }
-          ]
-        },
-    ]
-  },
-  optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
+        ]
       },
-    },
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/html/views/index.html'
+      template: './src/html/views/index.html',
+      minify: {
+        collapseWhitespace: isProd
+      }
     }),
     // new HtmlWebpackPlugin({  // Also generate a test.html
     //   filename: 'test.html',
@@ -94,7 +141,21 @@ module.exports = {
     // }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: './css/style.bundle.css',
-    })
+      filename: 'css/' + filename('css'),
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/favicon'),
+        to: path.resolve(__dirname, 'dist')
+      },
+      {
+        from: path.resolve(__dirname, 'src/fonts'),
+        to: path.resolve(__dirname, 'dist/fonts')
+      },
+      {
+        from: path.resolve(__dirname, 'src/img'),
+        to: path.resolve(__dirname, 'dist/img')
+      }
+    ])
   ]
 };

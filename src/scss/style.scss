@@ -1,5 +1,14 @@
 $body-test-color: red;
-@import "~bootstrap/scss/bootstrap";
+.imgtest {
+    background-image: url('../img/bg/desktop/SAVE_20200407_215510.jpg');
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'fonts.scss';
+@import 'icomoon.scss';
 
 *::-webkit-input-placeholder {
     color: #7A7A7A;
@@ -49,7 +58,7 @@ body {
 .preloader .loader {
     width: 50px;
     height: 50px;
-    background-image: url('../img/icons/liked.svg');
+    //background-image: url('../img/icons/liked.svg');
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,58 +87,10 @@ body {
     background-size: cover;
 }
 .firstscreen.bg01 {
-    background-image: url('../img/bg/01m.jpg');
+    //background-image: url('../img/bg/01m.jpg');
 }
 .firstscreen.bg02 {
-    background-image: url('../img/bg/02m.jpg');
-}
-.firstscreen.bg03 {
-    background-image: url('../img/bg/03m.jpg');
-}
-.firstscreen.bg04 {
-    background-image: url('../img/bg/04m.jpg');
-}
-.firstscreen.bg05 {
-    background-image: url('../img/bg/05m.jpg');
-}
-.firstscreen.bg06 {
-    background-image: url('../img/bg/06m.jpg');
-}
-.firstscreen.bg07 {
-    background-image: url('../img/bg/07m.jpg');
-}
-.firstscreen.bg08 {
-    background-image: url('../img/bg/08m.jpg');
-}
-.firstscreen.bg09 {
-    background-image: url('../img/bg/09m.jpg');
-}
-.firstscreen.bg10 {
-    background-image: url('../img/bg/10m.jpg');
-}
-.firstscreen.bg11 {
-    background-image: url('../img/bg/11m.jpg');
-}
-.firstscreen.bg12 {
-    background-image: url('../img/bg/12m.jpg');
-}
-.firstscreen.bg13 {
-    background-image: url('../img/bg/13m.jpg');
-}
-.firstscreen.bg14 {
-    background-image: url('../img/bg/14m.jpg');
-}
-.firstscreen.bg15 {
-    background-image: url('../img/bg/15m.jpg');
-}
-.firstscreen.bg16 {
-    background-image: url('../img/bg/16m.jpg');
-}
-.firstscreen.bg17 {
-    background-image: url('../img/bg/17m.jpg');
-}
-.firstscreen.bg18 {
-    background-image: url('../img/bg/18m.jpg');
+    //background-image: url('../img/bg/02m.jpg');
 }
 .firstscreen__block {
     text-align: center;
@@ -158,22 +119,10 @@ body {
     z-index: 20;
 }
 .content_bg.bg19 {
-    background-image: url('../img/bg/19m.jpg');
+    //background-image: url('../img/bg/19m.jpg');
 }
 .content_bg.bg20 {
-    background-image: url('../img/bg/20m.jpg');
-}
-.content_bg.bg21 {
-    background-image: url('../img/bg/21m.jpg');
-}
-.content_bg.bg22 {
-    background-image: url('../img/bg/22m.jpg');
-}
-.content_bg.bg23 {
-    background-image: url('../img/bg/23m.jpg');
-}
-.content_bg.bg24 {
-    background-image: url('../img/bg/24m.jpg');
+    //background-image: url('../img/bg/20m.jpg');
 }
 .content_bg .h2-login {
     color: #fff;
@@ -188,7 +137,7 @@ body {
 .logo__img {
     width: 27px;
     height: 24px;
-    background-image: url('../img/icons/logo-dark.svg');
+    //background-image: url('../img/icons/logo-dark.svg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     margin-right: 15px;
@@ -203,13 +152,13 @@ body {
 .logo.logo_main .logo__img {
     width: 50px;
     height: 47px;
-    background-image: url('../img/icons/logo.svg');
+    //background-image: url('../img/icons/logo.svg');
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 8px;
 }
 .logo.logo_main .logo__img:hover {
-    background-image: url('../img/icons/logo-dark.svg');
+    //background-image: url('../img/icons/logo-dark.svg');
 }
 .logo.logo_main .logo__text {
     font-size: 39px;

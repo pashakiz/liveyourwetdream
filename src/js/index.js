@@ -1,7 +1,10 @@
-import jQuery from 'jquery';
+import * as $ from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
+import '@scss/style.scss'
 
-jQuery(function() {
-    jQuery('body').css('color', 'blue');
+import '../js/babel'
+
+$(function() {
+    $('body').css('color', 'blue');
 });
