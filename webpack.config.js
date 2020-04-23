@@ -94,13 +94,13 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        //include: path.resolve(__dirname, 'src/html/includes'),
+        include: path.resolve(__dirname, 'src/html/includes'),
         use: ['html-loader']
       },
-      {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader'
-      },
+      // {
+      //   test: /\.hbs$/,
+      //   loader: 'handlebars-loader'
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -147,7 +147,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/html/views/index.hbs',
+      template: './src/html/views/index.html',
       minify: {
         collapseWhitespace: isProd
       },
