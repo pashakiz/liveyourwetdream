@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build2": "cross-env NODE_ENV=production webpack --mode production --no-progress --hide-modules --config webpack.config.js",
+    "build3": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config webpack.config.js",
+    "buildok": "cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
@@ -49,8 +52,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "bootstrap": "^4.4.1",
-    "handlebars": "^4.7.6",
-    "handlebars-loader": "^1.7.1",
     "jquery": "^3.5.0",
     "popper.js": "^1.16.1"
   }

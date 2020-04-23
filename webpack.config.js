@@ -97,10 +97,6 @@ module.exports = {
         include: path.resolve(__dirname, 'src/html/includes'),
         use: ['html-loader']
       },
-      // {
-      //   test: /\.hbs$/,
-      //   loader: 'handlebars-loader'
-      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -151,7 +147,7 @@ module.exports = {
       minify: {
         collapseWhitespace: isProd
       },
-      inject: false
+      inject: true
     }),
     // new HtmlWebpackPlugin({  // Also generate a test.html
     //   filename: 'test.html',
