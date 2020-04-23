@@ -5,9 +5,29 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
+
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      minify: {
+        collapseWhitespace: isProd
+      },
+      inject: true,
+    })
+  })
+}
+
+const htmlPlugins = generateHtmlPlugins('./src/html/views')
 
 const optimization = () => {
   const config = {
@@ -145,17 +165,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/html/views/index.html',
-      minify: {
-        collapseWhitespace: isProd
-      },
-      inject: true
-    }),
-    // new HtmlWebpackPlugin({  // Also generate a test.html
-    //   filename: 'test.html',
-    //   template: './src/html/views/test.html'
-    // }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/' + filename('css'),
@@ -174,5 +183,5 @@ module.exports = {
         to: path.resolve(__dirname, 'dist/img')
       }
     ])
-  ]
+  ].concat(htmlPlugins)
 };
