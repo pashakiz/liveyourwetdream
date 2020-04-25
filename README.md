@@ -1,20 +1,20 @@
 # Live Your Wet Dream
 
 # By the pages:
-http://lubus.ru/d/liveyourwetdream/
+https://pashakiz.github.io/liveyourwetdream/dist/index.html
 
-http://lubus.ru/d/liveyourwetdream/privacy.html
+https://pashakiz.github.io/liveyourwetdream/dist/privacy.html
 
-http://lubus.ru/d/liveyourwetdream/save.html
+https://pashakiz.github.io/liveyourwetdream/dist/save.html
 
-http://lubus.ru/d/liveyourwetdream/unsubscribe.html
+https://pashakiz.github.io/liveyourwetdream/dist/unsubscribe.html
 
-http://lubus.ru/d/liveyourwetdream/login.html
+https://pashakiz.github.io/liveyourwetdream/dist/login.html
 
-http://lubus.ru/d/liveyourwetdream/signup.html
+https://pashakiz.github.io/liveyourwetdream/dist/signup.html
 
-http://lubus.ru/d/liveyourwetdream/preferences.html
+https://pashakiz.github.io/liveyourwetdream/dist/preferences.html
 
-http://lubus.ru/d/liveyourwetdream/user_list.html
+https://pashakiz.github.io/liveyourwetdream/dist/user_list.html
 
-http://lubus.ru/d/liveyourwetdream/user_profile.html
+https://pashakiz.github.io/liveyourwetdream/dist/user_profile.html
