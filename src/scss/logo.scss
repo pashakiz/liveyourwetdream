@@ -1,13 +1,29 @@
 .logo {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    & {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
 }
 .logo__img {
   width: 45px;
   height: 45px;
-  background-image: url('../img/icons/logo.svg');
+  background-image: url('../img/icons/logo-red.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  margin-right: 20px;
+  margin-right: 0;
+  @media (min-width: 768px) {
+    & {
+      width: 43px;
+      height: 43px;
+      margin-right: 20px;
+    }
+  }
 }
 .logo__text {
   font-family: "Montserrat", sans-serif;
@@ -15,23 +31,77 @@
   color: $footer_text_color;
   font-size: 14px;
   text-transform: uppercase;
+  text-align: center;
+  @media (min-width: 768px) {
+    & {
+      text-align: left;
+    }
+  }
   @media (min-width: 768px) {
     & {
       font-size: 21px;
     }
   }
+  .logo__text-br {
+    @media (min-width: 768px) {
+      & {
+        display: none;
+      }
+    }
+  }
 }
+.logo_main {
+  margin: 180px 20px 40px;
+  @media (min-width: 768px) {
+    & {
+      margin: 40px 20px 40px 40px;
+    }
+  }
+  @media (min-width: 992px) {
+    & {
+      margin: 90px 20px 90px 90px;
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      margin: 90px 20px 90px 90px;
+    }
+  }
+  .logo__img {
+    background-image: url('../img/icons/logo-white.svg');
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/icons/logo-red.svg');
+        margin-bottom: 0;
+      }
+    }
+  }
+  .logo__text {
+    color: #fff;
+    font-size: 15px;
+    @media (min-width: 768px) {
+      & {
+        color: $logo_main_color;
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      & {
+        color: $logo_main_color;
+        font-size: 21px;
+      }
+    }
+  }
+}
+
 .logo_header {}
+
 .logo_footer {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin-bottom: 10px;
   @media (min-width: 768px) {
     & {
       margin-bottom: 0;
-      flex-direction: row;
-      justify-content: flex-start;
     }
   }
   @media (min-width: 992px) {
@@ -40,15 +110,10 @@
     }
   }
   .logo__img {
-    width: 45px;
-    height: 45px;
-    margin-right: 0;
+    background-image: url('../img/icons/logo-gray.svg');
     margin-bottom: 15px;
     @media (min-width: 768px) {
       & {
-        width: 43px;
-        height: 43px;
-        margin-right: 20px;
         margin-bottom: 0;
       }
     }
@@ -66,13 +131,6 @@
     @media (min-width: 992px) {
       & {
         font-size: 21px;
-      }
-    }
-    .logo__text-br {
-      @media (min-width: 768px) {
-        & {
-          display: none;
-        }
       }
     }
   }
