@@ -24,11 +24,16 @@ body textarea:required:valid {
 
 }
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  color: #7A7A7A;
+  font-family: $font_family;
+  font-weight: $font_weight;
+  font-size: $font_size_mobile;
+  color: $font_color;
   background-color: $body_bg_color;
+  @media (min-width: 768px) {
+    & {
+      font-size: $font_size;
+    }
+  }
   &.body_main {
     background-color: #fff;
   }
@@ -132,12 +137,15 @@ body {
   }
 }
 
-.secondscreen__title {
+.h2-index {
   font-family: "ActaDisplay", sans-serif;
   font-weight: 300;
   font-size: 34px;
   line-height: 45px;
   color: #fff;
+  &.h2-index_black {
+    color: $body_bg_color;
+  }
   &:before {
     content: '';
     display: block;
@@ -161,6 +169,7 @@ body {
 
 .index-content {
   background-color: #fff;
+  padding-bottom: 90px;
   &:before {
     content: '';
     display: block;
@@ -198,6 +207,11 @@ body {
       height: 600px;
     }
   }
+}
+
+.index-content__title {
+  position: relative;
+  top: -60px;
 }
 
 .collage {

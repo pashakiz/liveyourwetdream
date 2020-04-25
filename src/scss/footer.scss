@@ -36,6 +36,11 @@
         height: 180px;
       }
     }
+    @media (min-width: 992px) {
+      & {
+        height: 205px;
+      }
+    }
   }
   a.footer__link {
     font-family: "Montserrat", sans-serif;
