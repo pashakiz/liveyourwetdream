@@ -5,6 +5,8 @@ https://pashakiz.github.io/liveyourwetdream/dist/index.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/privacy.html
 
+https://pashakiz.github.io/liveyourwetdream/dist/anytext.html
+
 https://pashakiz.github.io/liveyourwetdream/dist/save.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/unsubscribe.html
