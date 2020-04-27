@@ -6,9 +6,18 @@
   background-repeat: no-repeat;
   background-position: 100%;
   background-size: cover;
+  &.bg01 {
+    background-position: 100%;
+  }
+  &.bg02 {
+    background-position: 100% 15%;
+  }
+  &.bg03 {
+    background-position: 100% 15%;
+  }
   @media (min-width: 768px) {
     & {
-      background-position: top right;
+      background-position: top right !important;
       background-size: 54%;
       position: relative;
     }
