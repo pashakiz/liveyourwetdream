@@ -117,7 +117,7 @@
   background-color: $bg_dark_1;
 }
 .header-menu__item {
-  padding: 15px 15px 38px;
+  padding: 15px 15px 30px;
   &:hover {
     opacity: 0.75;
     text-decoration: none;
@@ -125,11 +125,16 @@
 }
 .header-menu__item-text {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
+  @media (min-width: 768px) {
+    & {
+      font-size: 18px;
+    }
+  }
 }
 
 .header__firstscreen {
