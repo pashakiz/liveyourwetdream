@@ -95,7 +95,39 @@
   }
 }
 
-.logo_header {}
+.logo_header {
+  justify-content: flex-start;
+  //align-items: center;
+  flex-direction: row;
+  .logo__img {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/icons/logo-white.svg');
+    margin-right: 12px;
+    @media (min-width: 768px) {
+      & {
+        width: 43px;
+        height: 43px;
+        margin-right: 20px;
+        background-image: url('../img/icons/logo-red.svg');
+      }
+    }
+  }
+  .logo__text {
+    color: #fff;
+    font-size: 13px;
+    text-align: left;
+    @media (min-width: 768px) {
+      & {
+        font-size: 21px;
+        color: $logo_main_color;
+      }
+    }
+    .logo__text-br {
+      display: none;
+    }
+  }
+}
 
 .logo_footer {
   margin-bottom: 10px;
