@@ -1,28 +1,3 @@
-*::-webkit-input-placeholder {
-  color: #7A7A7A;
-  opacity: 1;
-}
-*:-moz-placeholder {
-  color: #7A7A7A;
-  opacity: 1;
-}
-*::-moz-placeholder {
-  color: #7A7A7A;
-  opacity: 1;
-}
-*:-ms-input-placeholder {
-  color: #7A7A7A;
-  opacity: 1;
-}
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-
-}
-body input:required:valid,
-body textarea:required:valid {
-
-}
 body {
   font-family: $font_family;
   font-weight: $font_weight;
@@ -92,7 +67,7 @@ h2 {
     & {
       font-size: 55px;
       line-height: 80px;
-      margin-bottom: 80px;
+      margin-bottom: 88px;
     }
   }
 }
@@ -129,6 +104,67 @@ p {
   @media (min-width: 768px) {
     & {
       line-height: 40px;
+    }
+  }
+}
+a {
+  font-family: $link_txt_family;
+  font-weight: 300;
+  font-style: italic;
+  color: $link_color;
+  text-decoration: none;
+  &:hover {
+    color: $link_hover_color;
+    text-decoration: none;
+  }
+}
+.link1 {
+  font-size: 15px;
+  line-height: 20px;
+  @media (min-width: 768px) {
+    & {
+      font-size: 23px;
+      line-height: 31px;
+    }
+  }
+  .link1__icon {
+    display: inline-block;
+    padding-left: 15px;
+    @media (min-width: 768px) {
+      & {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+.link2 {
+  font-family: $link_txt_family;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 20px;
+  color: $link2_color;
+  &:hover {
+    color: $link2_hover_color;
+  }
+  @media (min-width: 768px) {
+    & {
+      font-size: 23px;
+      line-height: 31px;
+    }
+  }
+}
+.link3 {
+  font-size: 14px;
+  line-height: 19px;
+  color: $link3_color;
+  &:hover {
+    color: $link3_hover_color;
+  }
+  @media (min-width: 768px) {
+    & {
+      font-size: 19px;
+      line-height: 26px;
     }
   }
 }

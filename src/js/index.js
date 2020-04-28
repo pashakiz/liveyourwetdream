@@ -31,7 +31,7 @@ $(function() {
 
     //upload photo
     $('.custom-file-input').on('change', function(){
-        $(this).closest('.custom-file').addClass('image');
+        $('.profile-photo__img').show();
     });
 
 });
