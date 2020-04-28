@@ -7,15 +7,13 @@ https://pashakiz.github.io/liveyourwetdream/dist/privacy.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/anytext.html
 
-https://pashakiz.github.io/liveyourwetdream/dist/save.html
-
 https://pashakiz.github.io/liveyourwetdream/dist/unsubscribe.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/login.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/signup.html
 
-https://pashakiz.github.io/liveyourwetdream/dist/preferences.html
+https://pashakiz.github.io/liveyourwetdream/dist/settings.html
 
 https://pashakiz.github.io/liveyourwetdream/dist/user_list.html
 

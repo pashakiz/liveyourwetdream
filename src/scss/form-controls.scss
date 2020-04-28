@@ -7,15 +7,15 @@
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 400;
-}
-.form-control:hover {
-  background-color: #DDE9E7;
-  color: #646464;
-}
-.form-control:focus {
-  box-shadow: none;
-  background-color: #DDE9E7;
-  color: #646464;
+  &:hover {
+    background-color: #DDE9E7;
+    color: #646464;
+  }
+  &:focus {
+    box-shadow: none;
+    background-color: #DDE9E7;
+    color: #646464;
+  }
 }
 input.form-control {
   height: 60px;
@@ -24,46 +24,91 @@ textarea.form-control {
   border-radius: 20px;
   min-height: 100px;
 }
-.custom-checkbox.custom-control {
-  padding-left: 2rem;
+.form-group_30 {
+  margin-bottom: 1.875rem;
 }
-.custom-checkbox .custom-control-label {
-  line-height: 1.6;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  cursor: pointer;
+.form-group_40 {
+  margin-bottom: 2.5rem;
 }
-.custom-checkbox .custom-control-label::before {
-  top: 0;
-  left: -2rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: #fff;
-  border: 1px solid #EFEFEF !important;
-  outline: none !important;
-  border-radius: 1rem;
+.custom-checkbox {
+  &.custom-control {
+    padding-left: $checkbox_xs_pl;
+    @media (min-width: 768px) {
+      padding-left: $checkbox_pl;
+    }
+  }
+  .custom-control-label {
+    font-family: "ActaDisplay", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    &::before {
+      top: $checkbox_xs_top;
+      left: $checkbox_xs_left;
+      width: $checkbox_xs_width;
+      height: $checkbox_xs_height;
+      background-color: $checkbox_bg_color;
+      border: $checkbox_border !important;
+      outline: none !important;
+      border-radius: 1rem;
+    }
+    &::after {
+      top: $checkbox_xs_top;
+      left: $checkbox_xs_left;
+      width: $checkbox_xs_width;
+      height: $checkbox_xs_height;
+      outline: none !important;
+    }
+    @media (min-width: 768px) {
+      & {
+        font-size: 20px;
+        line-height: 27px;
+      }
+      &::before {
+        top: $checkbox_top;
+        left: $checkbox_left;
+        width: $checkbox_width;
+        height: $checkbox_height;
+      }
+      &::after {
+        top: $checkbox_top;
+        left: $checkbox_left;
+        width: $checkbox_width;
+        height: $checkbox_height;
+      }
+    }
+  }
+  .custom-control-input {
+    &:checked {
+      ~.custom-control-label {
+        &::after {
+          background-image: url($checkbox_bg_icon);
+        }
+        &::before {
+          border-color: $checkbox_checked_border_color;
+          background-color: $checkbox_checked_bg_color;
+        }
+      }
+    }
+    &:active {
+      ~.custom-control-label {
+        &::before {
+          background-color: $checkbox_active_bg_color;
+        }
+      }
+    }
+    &:focus {
+      ~.custom-control-label {
+        &::before {
+          box-shadow: none;
+        }
+      }
+    }
+  }
 }
-.custom-checkbox .custom-control-label::after {
-  top: 0;
-  left: -2rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  outline: none !important;
-}
-.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64' enable-background='new 0 0 64 64' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%23727272' d='M23.5,54.9c0,0-0.1,0-0.1,0c-1.4,0-2.8-0.6-3.7-1.7l-18.3-20c-1.9-2.1-1.8-5.4,0.3-7.4 c2.1-2,5.4-1.8,7.4,0.3l14.6,16l31.4-31.4c2-2,5.3-2,7.4,0c2,2,2,5.3,0,7.4L27.2,53.4C26.2,54.3,24.9,54.9,23.5,54.9z'/%3E%3C/g%3E%3C/svg%3E%0A");
-}
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  border-color: #EFEFEF;
-  background-color: #fff;
-}
-.custom-checkbox .custom-control-input:active~.custom-control-label::before {
-  background-color: #fff;
-}
-.custom-checkbox .custom-control-input:focus~.custom-control-label::before {
-  box-shadow: none;
-}
+
 .custom-radio.custom-control {
   padding-left: 2rem;
 }
@@ -240,6 +285,6 @@ textarea.form-control {
   color: #fff;
   background-color: #20A892;
 }
-.btn-w100 {
+.btn_w100 {
   width: 100%;
 }

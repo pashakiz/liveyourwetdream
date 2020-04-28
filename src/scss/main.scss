@@ -1,23 +1,9 @@
-$footer_text_color:         #737373;
-$footer_text_color_hover:   #bebebe;
-$body_bg_color:             #141111;
-$logo_main_color:           #F85757;
-$btn_bg_color:              #FA4F4F;
-$font_color:                #B3B3B3;
-$bg_dark_1:                 #010101;
-$font_family:               "Montserrat", sans-serif;
-$font_weight:               400;
-$font_size:                 18px;
-$font_size_mobile:          14px;
-$body_mb:                   150px;
-$body_mb_mob:                   80px;
-
 @import '~bootstrap/scss/bootstrap.scss';
+@import 'variables.scss';
 @import 'fonts.scss';
 @import 'icomoon.scss';
 @import 'body.scss';
 @import 'form-controls.scss';
 @import 'header.scss';
 @import 'logo.scss';
-
 @import 'footer.scss';
