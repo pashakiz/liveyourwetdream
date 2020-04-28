@@ -34,4 +34,22 @@ $(function() {
         $('.profile-photo__img').show();
     });
 
+
+    // $(document).ready(function() {
+    //
+    //     //slider on mobile
+    //     $('.owl-carousel').owlCarousel({
+    //         items: 1
+    //     });
+    //
+    //     //gallery on desktop
+    //     $('.user-profile__gallery').on('click', '.user-profile__gallery-img', function(){
+    //         var url = $(this).css('background-image');
+    //         url = url.replace('url(','').replace(')','').replace(/\"/gi, "");
+    //         $('.user-profile__image').css('background-image', 'url(' + url + ')');
+    //     });
+    //
+    // });
+
+
 });
