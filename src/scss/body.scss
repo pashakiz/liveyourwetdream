@@ -108,9 +108,6 @@ p {
   }
 }
 a {
-  font-family: $link_txt_family;
-  font-weight: 300;
-  font-style: italic;
   color: $link_color;
   text-decoration: none;
   &:hover {
@@ -119,6 +116,9 @@ a {
   }
 }
 .link1 {
+  font-family: $link_txt_family;
+  font-weight: 300;
+  font-style: italic;
   font-size: 15px;
   line-height: 20px;
   @media (min-width: 768px) {
@@ -155,6 +155,9 @@ a {
   }
 }
 .link3 {
+  font-family: $link_txt_family;
+  font-weight: 300;
+  font-style: italic;
   font-size: 14px;
   line-height: 19px;
   color: $link3_color;
