@@ -180,6 +180,16 @@
         }
       }
     }
+    .compatibility__chart {
+      +.compatibility__chart {
+        margin-left: 11px;
+        @media (min-width: $user_list_item_breakpoint) {
+          & {
+            margin-left: 71px;
+          }
+        }
+      }
+    }
   }
   &.compatibility_login {}
 }
