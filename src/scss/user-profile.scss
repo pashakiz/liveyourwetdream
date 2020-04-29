@@ -135,7 +135,16 @@
       }
     }
   }
-  .compatibility__img {}
+  .compatibility__img {
+    width: 46px;
+    height: 41px;
+    @media (min-width: 768px) {
+      & {
+        width: 59px;
+        height: 54px;
+      }
+    }
+  }
   .compatibility__title {
     font-weight: 500;
     color: #C9C9C9;
