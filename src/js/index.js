@@ -11,7 +11,7 @@ $(function() {
 
         //preloader
         setTimeout(function() {
-            var preloader = $('#page-preloader');
+            let preloader = $('#page-preloader');
             if ( !preloader.hasClass('done') ) {
                 preloader.addClass('done');
             }
@@ -38,15 +38,14 @@ $(function() {
 
 
         //slider on mobile
-        $('.owl-carousel').owlCarousel({
-            items: 1
-        });
+        // $('.owl-carousel').owlCarousel({
+        //     items: 1
+        // });
 
         //gallery on desktop
-        $('.user-profile__gallery').on('click', '.user-profile__gallery-img', function(){
-            var url = $(this).css('background-image');
-            url = url.replace('url(','').replace(')','').replace(/\"/gi, "");
-            $('.user-profile__image').css('background-image', 'url(' + url + ')');
+        $('.user-profile-gallery').on('click', '.user-profile-gallery__img', function(){
+            let url = $(this).attr('src');
+            $('.profile-photo-img').attr('src', url);
         });
 
     });

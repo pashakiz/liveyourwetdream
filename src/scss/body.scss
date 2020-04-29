@@ -36,6 +36,14 @@ body {
     & {
       padding: 74px 148px 20px;
     }
+    &.content_profile {
+      padding: 74px 0 20px;
+    }
+  }
+  @media (min-width: 1500px) {
+    &.content_profile {
+      padding: 74px 148px 20px;
+    }
   }
 }
 h1 {

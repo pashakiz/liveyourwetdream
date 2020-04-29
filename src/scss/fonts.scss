@@ -21,6 +21,16 @@
     font-weight: 300;
 }
 @font-face {
+    font-family: "ActaDisplay";
+    src: url("../fonts/ActaDisplay/ActaDisplay-Book.eot");
+    src: url("../fonts/ActaDisplay/ActaDisplay-Book.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/ActaDisplay/ActaDisplay-Book.woff") format("woff"),
+    url("../fonts/ActaDisplay/ActaDisplay-Book.ttf") format("opentype"),
+    url("../fonts/ActaDisplay/ActaDisplay-Book.svg#ActaDisplay-Book") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
     font-family: "Montserrat"; /*Regular*/
     src: url("../fonts/Montserrat/Montserrat-Regular.eot");
     src: url("../fonts/Montserrat/Montserrat-Regular.eot?#iefix")format("embedded-opentype"),
