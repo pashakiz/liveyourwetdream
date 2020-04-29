@@ -119,9 +119,8 @@
 }
 
 .compatibility {
-  margin-bottom: 66px;
   @media (min-width: 768px) {
-    & {
+    &.compatibility_mb {
       margin-bottom: 70px;
     }
   }
@@ -155,4 +154,32 @@
       }
     }
   }
+  &.compatibility_mb {
+    margin-bottom: 66px;
+  }
+  &.compatibility_list {
+    .compatibility__img {
+      width: 24px;
+      height: 18px;
+      @media (min-width: $user_list_item_breakpoint) {
+        & {
+          width: 59px;
+          height: 54px;
+        }
+      }
+    }
+    .compatibility__title {
+      margin-top: 5px;
+      font-size: 7px;
+      font-weight: 500;
+      @media (min-width: $user_list_item_breakpoint) {
+        & {
+          margin-top: 16px;
+          font-size: 16px;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &.compatibility_login {}
 }

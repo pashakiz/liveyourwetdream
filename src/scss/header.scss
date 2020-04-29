@@ -71,6 +71,8 @@
 }
 .header__userinfo {
   display: none;
+  padding-left: 30px;
+  max-width: 500px;
   @media (min-width: 768px) {
     & {
       display: block;
@@ -89,6 +91,7 @@
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
+    word-break: break-all;
     &:hover {
       opacity: 0.75;
     }
@@ -130,6 +133,8 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
+  word-break: break-all;
+  padding-right: 30px;
   @media (min-width: 768px) {
     & {
       font-size: 18px;

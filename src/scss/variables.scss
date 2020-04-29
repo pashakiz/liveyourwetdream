@@ -1,3 +1,5 @@
+$container-xxl:             1374px;
+$container-xxxl:            1570px;
 $footer_text_color:         #737373;
 $footer_text_color_hover:   #bebebe;
 $body_bg_color:             #141111;
@@ -12,6 +14,7 @@ $font_size:                 18px;
 $font_size_mobile:          14px;
 $body_mb:                   150px;
 $body_mb_mob:               80px;
+$font_family2:              "ActaDisplay", sans-serif;
 $link_txt_family:           "ActaDisplay", sans-serif;
 $link_color:                $btn_bg_color;
 $link_hover_color:          #B44D4D;
@@ -80,4 +83,16 @@ $radio_checked_border_color: $radio_bg_color;
 $radio_active_bg_color:      #514e51;
 $radio_bg_icon:              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='4' fill='%23FA4F4F'/%3E%3C/svg%3E";
 
-//Custom Swich (Soon...)
+//Custom Swich
+//Soon...
+
+//Bootstrap container width
+@function get-container-width($key: 'md') {
+  @return map-get($container-max-widths, $key);
+}
+
+//User List page wider
+$user_list_wider:           150px;
+$user_list_mini_wider:      50px;
+$user_list_item_breakpoint: 992px;
+$user_list_title_color:     #E0E0E0;

@@ -17,12 +17,12 @@ body {
 .container {
   @media (min-width: 1500px) {
     & {
-      max-width: 1404px;
+      max-width: $container-xxl + $grid-gutter-width;
     }
   }
   @media (min-width: 1920px) {
     & {
-      max-width: 1600px;
+      max-width: $container-xxxl + $grid-gutter-width;
     }
   }
 }
@@ -94,16 +94,22 @@ h3 {
     }
   }
 }
-.title-mark:before {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 1px;
-  border-top: 3px solid $logo_main_color;
-  margin-bottom: 20px;
-  @media (min-width: 768px) {
-    & {
+.title-mark {
+  &:before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    border-top: 3px solid $logo_main_color;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
       width: 60px;
+    }
+  }
+  &.title-mark_center:before {
+    @media (min-width: 768px) {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

@@ -1,0 +1,109 @@
+.user-list {
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 160px;
+  @media (min-width: 768px) {
+    & {
+      //width: get-container-width('md') + $user_list_mini_wider;
+    }
+  }
+  @media (min-width: 992px) {
+    & {
+      //width: get-container-width('lg') - $grid-gutter-width + $user_list_mini_wider;
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      width: get-container-width('xl') - $grid-gutter-width + $user_list_mini_wider;
+      left: -25px;
+    }
+  }
+  @media (min-width: 1500px) {
+    & {
+      width: $container-xxl + $user_list_mini_wider; //1524px;
+    }
+  }
+  @media (min-width: 1920px) {
+    & {
+      width: $container-xxxl + $user_list_wider;
+      left: -75px;
+    }
+  }
+}
+
+.user-list-item {
+  background-color: $bg_dark_1;
+  padding: 28px 29px;
+  border-radius: 200px 50px 150px 200px;
+  .user-list-item__pic {
+    max-width: 237px;
+    max-height: 237px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    .user-list-item__img {}
+    .user-list-item__btn {
+      padding: 1.1rem 2.5rem;
+      font-size: 13px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .user-list-item__inf {
+    padding: 33px 42px 49px 53px;
+    .user-list-item__title {
+      margin-bottom: 11px;
+      @media (min-width: $user_list_item_breakpoint) {
+        margin-bottom: 33px;
+      }
+      .user-list-item__name {
+        font-family: $font_family2;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 12px;
+        @media (min-width: $user_list_item_breakpoint) {
+          & {
+            font-size: 25px;
+            color: #fff;
+          }
+        }
+      }
+      .user-list-item__dot {
+        display: none;
+        @media (min-width: $user_list_item_breakpoint) {
+          display: block;
+          background-color: $btn_bg_color;
+          border-radius: 50%;
+          width: 7px;
+          height: 7px;
+        }
+      }
+      .user-list-item__loc {
+        font-size: 8px;
+        font-weight: 500;
+        @media (min-width: $user_list_item_breakpoint) {
+          font-size: 15px;
+          color: #fff;
+        }
+      }
+    }
+  }
+  @media (min-width: $user_list_item_breakpoint) {
+    .tets{}
+  }
+}
+
+.user-list-title {
+  font-family: $font_family2;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 35px;
+  color: $user_list_title_color;
+  @media (min-width: $user_list_item_breakpoint) {
+      font-size: 30px;
+      line-height: 50px;
+  }
+}
+
+.user-list-extra {}
