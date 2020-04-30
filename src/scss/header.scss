@@ -188,6 +188,22 @@
       }
     }
   }
+  &.bg-login-01 {
+    background-image: url('../img/bg/mobile/bg-index-02.jpg');
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/bg/desktop/bg-login-01.jpg');
+      }
+    }
+  }
+  &.bg-login-02 {
+    background-image: url('../img/bg/mobile/bg-index-02.jpg');
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/bg/desktop/bg-login-02.jpg');
+      }
+    }
+  }
 }
 
 .header__firstscreen-wrap {
@@ -226,24 +242,32 @@
 .header__bgimg {
   display: none;
   @media (min-width: 768px) {
-    & {
-      display: inline;
-    }
+    display: inline;
   }
 }
 
 .header__titlebox {
   margin-bottom: 20px;
   @media (min-width: 768px) {
-    & {
-      width: 250px;
-      margin-bottom: 0;
-    }
+    width: 250px;
+    margin-bottom: 0;
   }
   @media (min-width: 992px) {
-    & {
-      width: 360px;
-    }
+    width: 360px;
+  }
+}
+
+.header__form {
+  padding-top: 48px;
+  @media (min-width: 768px) {
+    width: 411px;
+    padding-top: 15px;
+  }
+  @media (min-width: 992px) {
+    padding-top: 30px;
+  }
+  @media (min-width: 1920px) {
+    padding-top: 131px;
   }
 }
 
