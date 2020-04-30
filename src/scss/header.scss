@@ -189,7 +189,7 @@
     }
   }
   &.bg-login-01 {
-    background-image: url('../img/bg/mobile/bg-index-02.jpg');
+    background-image: url('../img/bg/mobile/bg-index-01.jpg');
     @media (min-width: 768px) {
       & {
         background-size: 53%;
@@ -202,6 +202,30 @@
     @media (min-width: 768px) {
       & {
         background-image: url('../img/bg/desktop/bg-login-02.jpg');
+      }
+    }
+  }
+  &.bg-login-03 {
+    background-image: url('../img/bg/mobile/bg-index-03.jpg');
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/bg/desktop/bg-login-03.jpg');
+      }
+    }
+  }
+  &.bg-login-04 {
+    background-image: url('../img/bg/mobile/bg-index-02.jpg');
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/bg/desktop/bg-login-04.jpg');
+      }
+    }
+  }
+  &.bg-login-05 {
+    background-image: url('../img/bg/mobile/bg-index-03.jpg');
+    @media (min-width: 768px) {
+      & {
+        background-image: url('../img/bg/desktop/bg-login-05.jpg');
       }
     }
   }
