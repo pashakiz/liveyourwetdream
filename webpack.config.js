@@ -64,7 +64,13 @@ const cssLoaders = extra => {
     }
   ];
   if (extra) {
-    loaders.push(extra)
+    if ( Array.isArray(extra) ) {
+      extra.forEach((someLoader) => {
+        loaders.push(someLoader)
+      })
+    } else {
+      loaders.push(extra)
+    }
   }
   return loaders
 }
@@ -135,7 +141,18 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use: cssLoaders('sass-loader')
+        use: cssLoaders([
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () { // postcss plugins, can be exported to postcss.config.js
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          { loader: 'sass-loader' } ])
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
