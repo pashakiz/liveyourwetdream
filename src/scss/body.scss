@@ -28,22 +28,13 @@ body {
 }
 .content {
   @media (min-width: 992px) {
-    & {
-      padding: 30px 0 0;
-    }
+    padding: 30px 0 0;
   }
   @media (min-width: 1200px) {
-    & {
-      padding: 74px 148px 20px;
-    }
-    &.content_profile {
-      padding: 74px 0 20px;
-    }
+    padding: 74px 48px 20px;
   }
-  @media (min-width: 1500px) {
-    &.content_profile {
-      padding: 74px 148px 20px;
-    }
+  @media (min-width: 1920px) {
+    padding: 74px 148px 20px;
   }
 }
 h1 {
