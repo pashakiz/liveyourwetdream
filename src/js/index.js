@@ -2,6 +2,7 @@ import * as $ from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
 import '@scss/main.scss'
+import 'owl.carousel'
 
 $(function() {
 
@@ -34,11 +35,36 @@ $(function() {
             $('.profile-photo__img').show();
         });
 
+        //slider login page
+        $('.owl-carousel.login-slider').owlCarousel({
+            loop:true,
+            autoWidth:true,
+            items: 3,
+            responsive:{
+                0:{
+                    margin:23,
+                    items:2
+                },
+                600:{
+                    margin:23,
+                    items:3
+                },
+                1400:{
+                    margin:91,
+                    items:3
+                },
+                1920:{
+                    margin:91,
+                    items:3
+                }
+            }
+        });
 
-        //slider on mobile
-        // $('.owl-carousel').owlCarousel({
-        //     items: 1
-        // });
+        //slider (Profile gallery) for mobile
+        $('.owl-carousel.user-profile-slider').owlCarousel({
+            items: 1,
+            dots:true
+        });
 
         //gallery on desktop
         $('.user-profile-gallery').on('click', '.user-profile-gallery__img', function(){

@@ -192,6 +192,7 @@
     background-image: url('../img/bg/mobile/bg-index-02.jpg');
     @media (min-width: 768px) {
       & {
+        background-size: 53%;
         background-image: url('../img/bg/desktop/bg-login-01.jpg');
       }
     }
